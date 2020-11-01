@@ -121,6 +121,12 @@ kbwaveBookshelf
  </summary>
  <returns></returns>
 </member>
+<member name="P:kbwaveBookshelf.Book.ImagePath">
+ <summary>
+ 画像パス(絶対パス)の取得・設定
+ </summary>
+ <returns></returns>
+</member>
 <member name="P:kbwaveBookshelf.Book.PaddingElement">
  <summary>
  余剰分の設定・取得
