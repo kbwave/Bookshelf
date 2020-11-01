@@ -1,0 +1,234 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+kbwaveBookshelf
+</name>
+</assembly>
+<members>
+<member name="T:kbwaveBookshelf.My.Resources.Resources">
+<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
+</member>
+<member name="P:kbwaveBookshelf.My.Resources.Resources.ResourceManager">
+<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member>
+<member name="P:kbwaveBookshelf.My.Resources.Resources.Culture">
+<summary>
+  すべてについて、現在のスレッドの CurrentUICulture プロパティをオーバーライドします
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member>
+<member name="T:kbwaveBookshelf.ITreatCSVkbwave">
+ <summary>
+ CSV関係として扱うインタフェース
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.ITreatCSVkbwave.ToCSVLine">
+ <summary>
+ 自分自身CSVの1行化
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:kbwaveBookshelf.ITreatCSVkbwave.SetMeFromCSVLine(System.String)">
+ <summary>
+ CSVの1行から自分自身へセット
+ </summary>
+ <param name="CSVLine"></param>
+</member>
+<member name="T:kbwaveBookshelf.SaveFile">
+ <summary>
+ ファイル保存の共通モジュール
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.SaveFile.SetUp">
+ <summary>
+ 使用準備
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.SaveFile.WriteCSV(System.String,System.String)">
+ <summary>
+ CSVへ書き込み
+ </summary>
+ <param name="FilePath"></param>
+ <param name="contents"></param>
+</member>
+<member name="T:kbwaveBookshelf.Book">
+ <summary>
+ 本の情報を管理
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.Book.SetMeFromCSVLine(System.String)">
+ <summary>
+ CSV1行から自分自身へセット
+ </summary>
+ <param name="CSVLine"></param>
+</member>
+<member name="M:kbwaveBookshelf.Book.ToCSVLine">
+ <summary>
+ 情報をCSV1行化
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:kbwaveBookshelf.Book.MngNo">
+ <summary>
+ 管理番号の取得・設定(PK)
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:kbwaveBookshelf.Book.BookNo">
+ <summary>
+ 本番号の設定・取得
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:kbwaveBookshelf.Book.Title">
+ <summary>
+ タイトルの設定・取得
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:kbwaveBookshelf.Book.SubTitle">
+ <summary>
+ サブタイトルの設定・取得
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:kbwaveBookshelf.Book.Volume">
+ <summary>
+ 巻数の設定・取得
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:kbwaveBookshelf.Book.Category">
+ <summary>
+ カテゴリーの設定・取得
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:kbwaveBookshelf.Book.Value">
+ <summary>
+ 値段の設定・取得
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:kbwaveBookshelf.Book.Read">
+ <summary>
+ 既読かの設定・取得
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:kbwaveBookshelf.Book.PaddingElement">
+ <summary>
+ 余剰分の設定・取得
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:kbwaveBookshelf.Book.#ctor">
+ <summary>
+ インスタンス
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.Book.InitMember">
+ <summary>
+ メンバの初期化
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.Book.Clone">
+ <summary>
+ クローン
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:kbwaveBookshelf.BookSeries">
+ <summary>
+ シリーズを管理
+ </summary>
+</member>
+<member name="P:kbwaveBookshelf.BookSeries.MngNo">
+ <summary>
+ 管理番号の取得・設定(PK)
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:kbwaveBookshelf.BookSeries.Title">
+ <summary>
+ タイトルの取得・設定
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:kbwaveBookshelf.BookSeries.Books">
+ <summary>
+ 管理する本の取得・設定(Key:BookNo, Item:Book)
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:kbwaveBookshelf.BookSeries.BooksCount">
+ <summary>
+ 管理している本の総数
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:kbwaveBookshelf.BookSeries.#ctor">
+ <summary>
+ インスタンス
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.BookSeries.InitMember">
+ <summary>
+ メンバの初期化
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.BookSeries.Clone">
+ <summary>
+ クローン
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:kbwaveBookshelf.BookSeries.MakeCloneBooks">
+ <summary>
+ クローンしたBookを作成
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:kbwaveBookshelf.Bookshelf">
+ <summary>
+ 本棚を管理
+ </summary>
+</member>
+<member name="P:kbwaveBookshelf.Bookshelf.BookSeries">
+ <summary>
+ 管理するシリーズの取得・設定
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:kbwaveBookshelf.Bookshelf.#ctor">
+ <summary>
+ インスタンス
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.Bookshelf.InitMember">
+ <summary>
+ メンバの初期化
+ </summary>
+</member>
+<member name="T:kbwaveBookshelf.DataPool">
+ <summary>
+ データを管理するモジュール
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.DataPool.SetUp">
+ <summary>
+ モジュールの使用準備
+ </summary>
+</member>
+<member name="T:kbwaveBookshelf.windowBookshelf">
+ <summary>
+ 本棚画面
+ </summary>
+</member>
+</members>
+</doc>
