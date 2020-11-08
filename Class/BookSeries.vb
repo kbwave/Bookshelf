@@ -68,8 +68,8 @@ Public Class BookSeries
     ''' <summary>
     ''' インスタンス
     ''' </summary>
-    Public Sub New()
-        Me.InitMember()
+    Public Sub New(ByVal MngNo As UInteger)
+        Me.InitMember(MngNo)
     End Sub
 
 #End Region
@@ -79,8 +79,8 @@ Public Class BookSeries
     ''' <summary>
     ''' メンバの初期化
     ''' </summary>
-    Private Sub InitMember()
-        Me._MngNo = CUInt(0)
+    Private Sub InitMember(ByVal MngNo As UInteger)
+        Me._MngNo = MngNo
         Me._Title = String.Empty
         Me._Books = New Dictionary(Of UInteger, Book)
     End Sub
@@ -92,10 +92,9 @@ Public Class BookSeries
     Public Function Clone() As BookSeries
         Dim clonedBookSeries As BookSeries = Nothing
 
-        clonedBookSeries = New BookSeries
+        clonedBookSeries = New BookSeries(Me._MngNo)
 
         With clonedBookSeries
-            .MngNo = Me._MngNo
             .Title = Me._Title
             .Books = Me.MakeCloneBooks
         End With
@@ -118,15 +117,33 @@ Public Class BookSeries
                 Book = Me._Books(i)
 
                 If Not clonedBooks.ContainsKey(Book.BookNo) Then
-                    clonedBooks.Add(Book.MngNo, Book)
+                    clonedBooks.Add(Book.MngNo, Book.Clone)
                 End If
             Next
-            'For Each book As Book In Me._Books
-            '    clonedBooks.Add(book.Clone)
-            'Next
         End If
 
         Return clonedBooks
+    End Function
+
+    ''' <summary>
+    ''' Bookを管理下に追加
+    ''' </summary>
+    ''' <param name="targetBook"></param>
+    ''' <returns>True:Success,False:Fail</returns>
+    Public Function AddBook(ByVal targetBook As Book) As Boolean
+        Dim successed As Boolean = False
+
+        If Me._Books Is Nothing Then Me.InitMember(targetBook.MngNo)
+
+        If Me._Books.ContainsKey(targetBook.BookNo) Then
+            successed = False
+        Else
+            Me._Books.Add(targetBook.BookNo, targetBook)
+
+            successed = True
+        End If
+
+        Return successed
     End Function
 
 #End Region

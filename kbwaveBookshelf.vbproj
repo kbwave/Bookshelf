@@ -71,16 +71,23 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="kbwaveRegistryLogic">
+      <HintPath>..\..\Common\Dll\kbwaveRegistryLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -96,17 +103,32 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\Common\Interface\ITableClass.vb">
+      <Link>Interface\ITableClass.vb</Link>
+    </Compile>
     <Compile Include="..\..\Common\Interface\ITreatCSV.vb">
       <Link>Interface\ITreatCSV.vb</Link>
     </Compile>
+    <Compile Include="..\..\Common\Module\gmodControl.vb">
+      <Link>Module\gmodControl.vb</Link>
+    </Compile>
     <Compile Include="..\..\Common\Module\gmodSaveFile.vb">
       <Link>Module\gmodSaveFile.vb</Link>
+    </Compile>
+    <Compile Include="BookOne.xaml.vb">
+      <DependentUpon>BookOne.xaml</DependentUpon>
     </Compile>
     <Compile Include="Class\Book.vb" />
     <Compile Include="Class\BookSeries.vb" />
     <Compile Include="Class\Bookshelf.vb" />
     <Compile Include="Module\DataPool.vb" />
     <Compile Include="Module\Program.vb" />
+    <Compile Include="Window\windowBook.Designer.vb">
+      <DependentUpon>windowBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Window\windowBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Window\windowBookshelf.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -130,8 +152,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Window\windowDebug.Designer.vb">
+      <DependentUpon>windowDebug.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Window\windowDebug.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Window\windowBook.resx">
+      <DependentUpon>windowBook.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Window\windowBookshelf.resx">
       <DependentUpon>windowBookshelf.vb</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +171,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\windowDebug.resx">
+      <DependentUpon>windowDebug.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +187,15 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="BookOne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

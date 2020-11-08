@@ -10,3 +10,12 @@ C:\Users\林 知宏\Documents\Visual Studio 2019\Projects\kbwaveBookshelf\obj\x6
 C:\Users\林 知宏\Documents\Visual Studio 2019\Projects\kbwaveBookshelf\obj\x64\Debug\kbwaveBookshelf.xml
 C:\Users\林 知宏\Documents\Visual Studio 2019\Projects\kbwaveBookshelf\obj\x64\Debug\kbwaveBookshelf.pdb
 C:\Users\林 知宏\Documents\Visual Studio 2019\Projects\kbwaveBookshelf\obj\x64\Debug\kbwaveBookshelf.vbprojAssemblyReference.cache
+C:\Users\林 知宏\Documents\Visual Studio 2019\Projects\kbwaveBookshelf\bin\x64\Debug\kbwaveRegistryLogic.dll
+C:\Users\林 知宏\Documents\Visual Studio 2019\Projects\kbwaveBookshelf\obj\x64\Debug\kbwaveBookshelf.vbproj.CopyComplete
+C:\Users\林 知宏\Documents\Visual Studio 2019\Projects\kbwaveBookshelf\obj\x64\Debug\BookOne.g.vb
+C:\Users\林 知宏\Documents\Visual Studio 2019\Projects\kbwaveBookshelf\obj\x64\Debug\kbwaveBookshelf_MarkupCompile.cache
+C:\Users\林 知宏\Documents\Visual Studio 2019\Projects\kbwaveBookshelf\obj\x64\Debug\kbwaveBookshelf_MarkupCompile.lref
+C:\Users\林 知宏\Documents\Visual Studio 2019\Projects\kbwaveBookshelf\obj\x64\Debug\BookOne.baml
+C:\Users\林 知宏\Documents\Visual Studio 2019\Projects\kbwaveBookshelf\obj\x64\Debug\kbwaveBookshelf.g.resources
+C:\Users\林 知宏\Documents\Visual Studio 2019\Projects\kbwaveBookshelf\obj\x64\Debug\kbwaveBookshelf.windowBook.resources
+C:\Users\林 知宏\Documents\Visual Studio 2019\Projects\kbwaveBookshelf\obj\x64\Debug\kbwaveBookshelf.windowDebug.resources

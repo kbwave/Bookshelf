@@ -22,6 +22,36 @@ kbwaveBookshelf
   現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
 </summary>
 </member>
+<member name="T:kbwaveBookshelf.ITableClasskbwave">
+ <summary>
+ テーブルクラスインタフェース
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:kbwaveBookshelf.ITableClasskbwave.GetData">
+ <summary>
+ DBからデータを取得
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:kbwaveBookshelf.ITableClasskbwave.RegistData">
+ <summary>
+ DBへデータを登録
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:kbwaveBookshelf.ITableClasskbwave.FieldCount">
+ <summary>
+ フィールド数を取得
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:kbwaveBookshelf.ITableClasskbwave.FieldNames">
+ <summary>
+ フィールド名称を全取得
+ </summary>
+ <returns></returns>
+</member>
 <member name="T:kbwaveBookshelf.ITreatCSVkbwave">
  <summary>
  CSV関係として扱うインタフェース
@@ -38,6 +68,17 @@ kbwaveBookshelf
  CSVの1行から自分自身へセット
  </summary>
  <param name="CSVLine"></param>
+</member>
+<member name="T:kbwaveBookshelf.modControl">
+ <summary>
+ コントロールに関する共通モジュール
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.modControl.IsNumericText">
+ <summary>
+ 
+ </summary>
+ <returns></returns>
 </member>
 <member name="T:kbwaveBookshelf.SaveFile">
  <summary>
@@ -56,9 +97,24 @@ kbwaveBookshelf
  <param name="FilePath"></param>
  <param name="contents"></param>
 </member>
+<member name="T:kbwaveBookshelf.BookOne">
+<summary>
+BookOne
+</summary>
+</member>
+<member name="M:kbwaveBookshelf.BookOne.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:kbwaveBookshelf.Book">
  <summary>
  本の情報を管理
+ </summary>
+</member>
+<member name="T:kbwaveBookshelf.Book.MemberElement">
+ <summary>
+ 定義列挙
  </summary>
 </member>
 <member name="M:kbwaveBookshelf.Book.SetMeFromCSVLine(System.String)">
@@ -72,6 +128,28 @@ kbwaveBookshelf
  情報をCSV1行化
  </summary>
  <returns></returns>
+</member>
+<member name="P:kbwaveBookshelf.Book.FieldCount">
+ <summary>
+ フィールド数を取得
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:kbwaveBookshelf.Book.FieldNames">
+ <summary>
+ フィールド名称を全取得
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:kbwaveBookshelf.Book.GetData">
+ <summary>
+ データを取得
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.Book.RegistData">
+ <summary>
+ データを登録
+ </summary>
 </member>
 <member name="P:kbwaveBookshelf.Book.MngNo">
  <summary>
@@ -142,6 +220,12 @@ kbwaveBookshelf
  <summary>
  メンバの初期化
  </summary>
+</member>
+<member name="M:kbwaveBookshelf.Book.ToString">
+ <summary>
+ 文字列化
+ </summary>
+ <returns></returns>
 </member>
 <member name="M:kbwaveBookshelf.Book.Clone">
  <summary>
@@ -231,10 +315,81 @@ kbwaveBookshelf
  モジュールの使用準備
  </summary>
 </member>
+<member name="M:kbwaveBookshelf.DataPool.InstanceData">
+ <summary>
+ クラスの準備
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.DataPool.SetDatas">
+ <summary>
+ クラスにデータをセット
+ </summary>
+</member>
+<member name="T:kbwaveBookshelf.windowBook">
+ <summary>
+ 本の1冊に関しての設定画面
+ </summary>
+</member>
+<member name="P:kbwaveBookshelf.windowBook.TargetBook">
+ <summary>
+ 編集対象のBook情報の取得・設定
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:kbwaveBookshelf.windowBook.#ctor">
+ <summary>
+ コンストラクタ
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.windowBook.AddEventHandler">
+ <summary>
+ イベントハンドラを追加
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.windowBook.ButtonClickEvent(System.Object,System.EventArgs)">
+ <summary>
+ ボタンクリックイベント
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:kbwaveBookshelf.windowBook.IsCompleteInput(System.Boolean)">
+ <summary>
+ 入力情報に不備がないか
+ </summary>
+ <returns></returns>
+</member>
 <member name="T:kbwaveBookshelf.windowBookshelf">
  <summary>
  本棚画面
  </summary>
+</member>
+<member name="M:kbwaveBookshelf.windowDebug.#ctor">
+ <summary>
+ コンストラクタ
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.windowDebug.Finalize">
+ <summary>
+ デストラクタ
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.windowDebug.AddEventHandler">
+ <summary>
+ イベントハンドラを追加
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.windowDebug.RemoveEventHandler">
+ <summary>
+ イベントハンドラを削除
+ </summary>
+</member>
+<member name="M:kbwaveBookshelf.windowDebug.ButtonClickEvent(System.Object,System.EventArgs)">
+ <summary>
+ ボタンクリックイベント処理
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
 </member>
 </members>
 </doc>

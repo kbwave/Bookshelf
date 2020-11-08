@@ -13,9 +13,27 @@ Module DataPool
     ''' </summary>
     Public Sub SetUp()
 
+        SetDatas()
+
+    End Sub
+
+    ''' <summary>
+    ''' クラスの準備
+    ''' </summary>
+    Private Sub InstanceData()
+        _Bookshelfs = New Bookshelf
+    End Sub
+
+    ''' <summary>
+    ''' クラスにデータをセット
+    ''' </summary>
+    Private Sub SetDatas()
+        'Constant
+        InstanceData()
 
 
     End Sub
+
 
 #End Region
 

@@ -4,10 +4,24 @@
 ''' 本の情報を管理
 ''' </summary>
 Public Class Book
-    Implements ITreatCSVkbwave
+    Implements ITreatCSVkbwave, ITableClasskbwave
 
 #Region "Define"
 
+    Private Const Field_MngNo As String = "MngNo"
+    Private Const Field_BookNo As String = "BookNo"
+    Private Const Field_Title As String = "Title"
+    Private Const Field_SubTitlte As String = "SubTitle"
+    Private Const Field_Volume As String = "Volume"
+    Private Const Field_Category As String = "Category"
+    Private Const Field_Value As String = "Value"
+    Private Const Field_Read As String = "Read"
+    Private Const Field_ImagePath As String = "ImagePath"
+    Private Const Field_Padding As String = "Padding"
+
+    ''' <summary>
+    ''' 定義列挙
+    ''' </summary>
     Private Enum MemberElement As Integer
         None = -1
         MngNo
@@ -32,7 +46,7 @@ Public Class Book
     ''' </summary>
     ''' <param name="CSVLine"></param>
     Public Sub SetMeFromCSVLine(CSVLine As String) Implements ITreatCSVkbwave.SetMeFromCSVLine
-        Throw New NotImplementedException()
+        'Throw New NotImplementedException()
 
         Dim Elements() As String = Nothing
         Dim Element As String = Nothing
@@ -91,23 +105,66 @@ Public Class Book
     ''' </summary>
     ''' <returns></returns>
     Public Function ToCSVLine() As String Implements ITreatCSVkbwave.ToCSVLine
-        Throw New NotImplementedException()
+        'Throw New NotImplementedException()
 
         Dim info As StringBuilder = Nothing
         info = New StringBuilder
 
-        info.Append("'" & Me.Title & "','")
-        info.Append("'" & Me.SubTitle & "','")
-        info.Append(Me.Volume.ToString & "','")
-        info.Append(Me.Category.ToString & "','")
-        info.Append(Me.Value.ToString & "','")
-        info.Append(Me.Read.ToString & "',")
-        info.Append(Me.ImagePath & "','")
+        info.Append("""" & Me.Title & """,""")
+        info.Append(Me.SubTitle & """,""")
+        info.Append(Me.Volume.ToString & """,""")
+        info.Append(Me.Category.ToString & """,""")
+        info.Append(Me.Value.ToString & """,""")
+        info.Append(Me.Read.ToString & """,""")
+        info.Append(Me.ImagePath & """,""")
 
         info.Append(Me.PaddingElement)
 
         Return info.ToString
     End Function
+
+    ''' <summary>
+    ''' フィールド数を取得
+    ''' </summary>
+    ''' <returns></returns>
+    Public ReadOnly Property FieldCount As Integer Implements ITableClasskbwave.FieldCount
+        Get
+            'Throw New NotImplementedException()
+
+            Return MemberElement.Num
+        End Get
+    End Property
+
+    ''' <summary>
+    ''' フィールド名称を全取得
+    ''' </summary>
+    ''' <returns></returns>
+    Public ReadOnly Property FieldNames As String() Implements ITableClasskbwave.FieldNames
+        Get
+            'Throw New NotImplementedException()
+
+            Dim Fields() As String = Nothing
+
+
+
+
+            Return Fields
+        End Get
+    End Property
+
+    ''' <summary>
+    ''' データを取得
+    ''' </summary>
+    Public Sub GetData() Implements ITableClasskbwave.GetData
+        'Throw New NotImplementedException()
+    End Sub
+
+    ''' <summary>
+    ''' データを登録
+    ''' </summary>
+    Public Sub RegistData() Implements ITableClasskbwave.RegistData
+        'Throw New NotImplementedException()
+    End Sub
 
 #End Region
 
@@ -284,6 +341,14 @@ Public Class Book
 
         Me._PaddingElement = String.Empty
     End Sub
+
+    ''' <summary>
+    ''' 文字列化
+    ''' </summary>
+    ''' <returns></returns>
+    Public Overrides Function ToString() As String
+        Return Me.ToCSVLine()
+    End Function
 
     ''' <summary>
     ''' クローン
